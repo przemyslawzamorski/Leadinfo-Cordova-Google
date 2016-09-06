@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+
+<html lang="pl">
+
+<style>
+
+
+</style>
+
+<head>
+
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <!--fonts-->
+    <link rel="stylesheet" type="text/css" href="hind-font.css">
+    <link rel="stylesheet" type="text/css" href="ubuntu-font.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="login_styles.css">
+    <script type='application/javascript' src='fastclick.js'></script>
+    <script src="login.js"></script>
+    <script src="jquery-2.2.0.js"></script>
+    <script src="bootstrap.js"></script>
+    <script src="cordova.js"></script>
+
+    <title>Aplikacja Leadinfo</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-2">
+</head>
+
+<body>
+<!--login menu-->
+<div id="login" class="container collapse in" style="height:100vh; width:100vw;">
+    <div style="padding-top: 50px;"
+         class="col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 col-sm-10 col-sm-offset-1 col-xs-offset-0 col-xs-12 ">
+        <p style="font-size: 40px; text-align: center; color: #737373;"><i class="fa fa-cogs"> </i>
+            <strong>Lead</strong>info </p>
+
+        <p style="font-size: 24px; text-align: center; color: #737373;">- Logowanie -</p>
+
+        <div style="text-align: center;">
+            <form id="login_form" style="text-align: center;" action="javascript:log_in(); ">
+                <input type="text" id="username" name="username" placeholder="Uzytkownik"
+                       style="width: 250px !important; padding: 4px 10px 4px 10px; border: none; margin-bottom: 20px; text-transform:uppercase">
+                </br>
+                <input type="password" id="password" name="password" placeholder="Haslo"
+                       style="width: 250px !important; padding: 4px 10px 4px 10px; border: none; margin-bottom: 20px;">
+                </br>
+                <p>Aktualny serwer :</p>
+
+                <p id="serwer_name"></p>
+
+                <input type="submit" class="btn btn-danger" value="Zaloguj sie">
+                <button style="margin-top: 0px !important;" type="button" class="btn btn-danger" value="Zmien serwer"
+                        onclick="change_serwer();">Zmien
+                    serwer
+                </button>
+            </form>
+
+
+            <form id="serwer_form" style="text-align: center;" action="javascript:add_serwer();">
+                <input type="text" id="serwer_input" name="serwer" placeholder="Dane serwera"
+                       style="width: 250px !important; padding: 4px 10px 4px 10px; border: none; margin-bottom: 20px;">
+                </br>
+                <input type="submit" class="btn btn-danger" value="Zatwierdź dane serwera">
+                <button id="back-button" type="button" class="btn btn-danger" onclick="back_to_login();"
+                        style="display : none; ">Wstecz
+                </button>
+
+            </form>
+        </div>
+
+
+        <div id="login_error" class="alert alert-danger" style="display: none; margin-top: 20px;">
+
+        </div>
+
+        <div id="server_error" class="alert alert-danger" style="display: none; margin-top: 20px;">
+            Nie mozna pobrać danych serwerow. Prosze sprawdz nazwe serwera oraz polaczenie z internetem.
+        </div>
+
+        <div id="no_server" class="alert alert-danger" style="display: none; margin-top: 20px;">
+            Nie można odnalezc wprowadzonego serwera proszę wprowadz inna nazwe
+        </div>
+
+
+        <!--login div-->
+    </div>
+</div>
+
+
+<div id="leeds-content" style="display: none">
+</div>
+</body>
+
+
+<script language="javascript">
+
+
+    document.addEventListener("deviceready", OnDeviceReady, false);
+    function OnDeviceReady() {
+        $.support.cors = true;
+        FastClick.attach(document.body);
+        check_server();
+    }
+
+
+</script>
+</html>

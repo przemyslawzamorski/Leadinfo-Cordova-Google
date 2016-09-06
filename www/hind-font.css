@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Hind';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Hind Regular'), local('Hind-Regular'), url(https://fonts.gstatic.com/s/hind/v5/i-YTZmu6yD9xk50jvez_kvesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+}
+@font-face {
+  font-family: 'Hind';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Hind Semibold'), local('Hind-Semibold'), url(https://fonts.gstatic.com/s/hind/v5/H5ZRvR26a6Cs1DtBSeVD3gLUuEpTyoUstqEm5AMlJo4.woff) format('woff');
+}

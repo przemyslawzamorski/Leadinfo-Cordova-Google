@@ -1,0 +1,38 @@
+table {
+    background-color: #ffffff;
+!important;
+}
+
+.status-cell {
+    width: 32px !important;
+    padding-left: 9px !important;
+    padding-right: 9px !important;
+}
+
+.warning {
+    color: #FC5151;
+    margin: 0px 0px 0px 0px;
+}
+
+button {
+
+    margin-top: 2px !important;
+}
+
+.filter-single-option-inner {
+    padding-bottom: 10px;
+}
+
+* {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+
+    background: -webkit-radial-gradient(white, #ababab) !important; /* For Safari 5.1 to 6.0 */
+    background: -o-radial-gradient(white, #ababab) !important; /* For Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(white, #ababab) !important; /* For Fx 3.6 to 15 */
+    background: radial-gradient(white, #ababab) !important; /* Standard syntax (must be last) */
+}
+
+
